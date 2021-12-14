@@ -1,9 +1,10 @@
 {
-  "name": "rentalx",
+  "name": "rentx",
   "version": "1.0.0",
   "main": "./src/server.ts",
   "scripts": {
-    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn ."
+    "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn .",
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli"
   },
   "license": "MIT",
   "dependencies": {
@@ -11,7 +12,10 @@
     "eslint": "^8.4.1",
     "express": "^4.17.1",
     "multer": "^1.4.4",
+    "pg": "^8.7.1",
+    "reflect-metadata": "^0.1.13",
     "swagger-ui-express": "^4.2.0",
+    "typeorm": "^0.2.41",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
