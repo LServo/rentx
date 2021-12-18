@@ -21,6 +21,12 @@
       ],
       "@utils/*": [
         "utils/*"
+      ],
+      "@src/*": [
+        "*"
+      ],
+      "@root/*": [
+        "../*"
       ]
     },
     "resolveJsonModule": true,
