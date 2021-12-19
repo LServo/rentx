@@ -79,6 +79,7 @@
                 ]
             }
         ]
+        // "allowForLoopAfterthoughts": true
     },
     "settings": {
         "import/resolver": {
