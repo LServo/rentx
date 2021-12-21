@@ -1,12 +1,9 @@
-import dayjs from "dayjs";
-import utc from "dayjs/plugin/utc";
 import { inject, injectable } from "tsyringe";
 
 import { Rental } from "@modules/rentals/infra/typeorm/entities/Rental";
 import { IRentalsRepository } from "@modules/rentals/repositories/IRentalsRepository";
+import { IDateProvider } from "@shared/container/providers/DateProvider/IDateProvider";
 import { AppError } from "@shared/errors/AppError";
-
-dayjs.extend(utc);
 
 interface IRequest {
     user_id: string;
@@ -14,11 +11,13 @@ interface IRequest {
     expected_return_date: Date;
 }
 
-// @injectable()
+@injectable()
 class CreateRentalUseCase {
     constructor(
-        // @inject('aaa')
-        private rentalsRepository: IRentalsRepository
+        @inject("RentalsRepository")
+        private rentalsRepository: IRentalsRepository,
+        @inject("DayjsDateProvider")
+        private dateProvider: IDateProvider
     ) {}
     async execute({
         user_id,
@@ -26,12 +25,10 @@ class CreateRentalUseCase {
         expected_return_date,
     }: IRequest): Promise<Rental> {
         const minHours = 24;
-        const carIsAvailable = await this.rentalsRepository.findOpenRentalByCar(
-            car_id
-        );
-
-        if (!carIsAvailable) {
-            throw new AppError("Car is not available");
+        const carIsUnavailable =
+            await this.rentalsRepository.findOpenRentalByCar(car_id);
+        if (carIsUnavailable) {
+            throw new AppError("Car is unavailable");
         }
 
         const userAlreadyRented =
@@ -40,18 +37,15 @@ class CreateRentalUseCase {
             throw new AppError("There's a rental in progress for user!");
         }
 
-        const expected_return_dateFormatted = dayjs(expected_return_date)
-            .utc()
-            .local()
-            .format();
-        const dateNow = dayjs().utc().local().format();
-        const compare = dayjs(expected_return_dateFormatted).diff(
+        const dateNow = this.dateProvider.dateNow();
+
+        const compare = this.dateProvider.compareInHours(
             dateNow,
-            "hours"
+            expected_return_date
         );
 
         if (compare < minHours) {
-            throw new AppError("Invalid expected return date!");
+            throw new AppError("Invalid return time!");
         }
 
         const newRental = await this.rentalsRepository.create({
