@@ -16,6 +16,11 @@
         ],
         "summary": "Create a category",
         "description": "Create a new category",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -84,6 +89,11 @@
         ],
         "summary": "Upload a new Category",
         "description": "Upload a new Category",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -113,6 +123,11 @@
         ],
         "summary": "Create a Specification",
         "description": "Create a new Specification",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -131,6 +146,40 @@
           }
         }
       }
+    },
+    "/sessions": {
+      "post": {
+        "tags": [
+          "Session"
+        ],
+        "summary": "Authentication User",
+        "description": "Authentication User",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Email or Password are Incorrect!"
+          }
+        }
+      }
     }
   },
   "definition": {
@@ -144,6 +193,13 @@
           "type": "string"
         }
       }
+    }
+  },
+  "components": {
+    "bearerAuth": {
+      "type": "http",
+      "scheme": "bearer",
+      "bearerFormat": "JWT"
     }
   }
 }

@@ -28,6 +28,7 @@ class CreateRentalUseCase {
         expected_return_date,
     }: IRequest): Promise<Rental> {
         const minHours = 24;
+
         const carIsUnavailable =
             await this.rentalsRepository.findOpenRentalByCar(car_id);
         if (carIsUnavailable) {
