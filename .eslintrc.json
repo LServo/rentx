@@ -6,8 +6,8 @@
     },
     "extends": [
         "airbnb-base",
-        "plugin:@typescript-eslint/recommended",
         "prettier",
+        "plugin:@typescript-eslint/recommended",
         "plugin:prettier/recommended"
     ],
     "parser": "@typescript-eslint/parser",
@@ -22,8 +22,10 @@
     ],
     "rules": {
         "camelcase": "off",
+        "no-await-in-loop": "warn",
+        "no-duplicate-imports": "error",
         "no-use-before-define": "off",
-        "prettier/prettier": "error",
+        "prettier/prettier": "warn",
         "import/no-unresolved": "error",
         "@typescript-eslint/naming-convention": [
             "error",
