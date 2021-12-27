@@ -3,7 +3,7 @@ import { getRepository, Repository } from "typeorm";
 import { ICreateUserTokenDTO } from "@modules/accounts/dtos/ICreateUserTokenDTO";
 import { UserTokens } from "@modules/accounts/infra/typeorm/entities/UserTokens";
 
-import { IUsersTokensRepository } from "../IUsersTokenRepository";
+import { IUsersTokensRepository } from "../../../repositories/IUsersTokenRepository";
 
 class UsersTokensRepository implements IUsersTokensRepository {
     private repository: Repository<UserTokens>;
