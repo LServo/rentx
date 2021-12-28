@@ -47,7 +47,7 @@ describe("Send Forgot Password Mail Use Case", () => {
     });
 
     it("Should be able to create a new user token", async () => {
-        const isGenerated = spyOn(usersTokensRepositoryInMemory, "create");
+        const isGenerated = jest.spyOn(usersTokensRepositoryInMemory, "create");
 
         usersRepositoryInMemory.create({
             driver_license: "994441",
