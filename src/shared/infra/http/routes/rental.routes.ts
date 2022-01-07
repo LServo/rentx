@@ -14,14 +14,14 @@ const devolutionRentalController = new DevolutionRentalController();
 
 rentalRoutes.post("/", ensureAuthenticated, createRentalController.handle);
 rentalRoutes.post(
-    "/devolution/:id",
-    ensureAuthenticated,
-    devolutionRentalController.handle
+  "/devolution/:id",
+  ensureAuthenticated,
+  devolutionRentalController.handle
 );
 rentalRoutes.get(
-    "/user",
-    ensureAuthenticated,
-    listRentalsByUserController.handle
+  "/user",
+  ensureAuthenticated,
+  listRentalsByUserController.handle
 );
 
 export { rentalRoutes };

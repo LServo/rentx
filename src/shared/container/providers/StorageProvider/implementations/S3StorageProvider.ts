@@ -9,12 +9,15 @@ import { IStorageProvider } from "../IStorageProvider";
 
 class S3StorageProvider implements IStorageProvider {
     private client: S3;
+
     constructor() {
         this.client = new S3({
             region: process.env.AWS_BUCKET_REGION,
         });
     }
+
     async save(file: string, folder: string): Promise<string> {
+        console.log("save");
         const originalName = resolve(upload.tmpFolder, file);
 
         const fileContent = await fs.promises.readFile(originalName);
@@ -34,7 +37,9 @@ class S3StorageProvider implements IStorageProvider {
 
         return file;
     }
+
     async delete(file: string, folder: string): Promise<void> {
+        console.log("delete");
         await this.client
             .deleteObject({
                 Bucket: `${process.env.AWS_BUCKET}/${folder}`,
