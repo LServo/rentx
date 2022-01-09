@@ -1,3 +1,5 @@
+import { instanceToInstance } from "class-transformer";
+
 import { IUSerResponseDTO } from "../dtos/IUserResponseDTO";
 import { User } from "../infra/typeorm/entities/User";
 
@@ -8,14 +10,17 @@ class UserMap {
     id,
     avatar,
     driver_license,
+    avatar_url,
   }: User): IUSerResponseDTO {
-    return {
+    const user = instanceToInstance({
       email,
       name,
       id,
       avatar,
       driver_license,
-    };
+      avatar_url,
+    });
+    return user;
   }
 }
 
