@@ -1,4 +1,4 @@
-import { container } from "tsyringe";
+import { container, delay } from "tsyringe";
 
 import "@shared/container/providers";
 
@@ -19,33 +19,36 @@ import { IRentalsRepository } from "@modules/rentals/repositories/IRentalsReposi
 
 // ICategoriesRepository
 container.registerSingleton<ICategoriesRepository>(
-    "CategoriesRepository",
-    CategoriesRepository
+  "CategoriesRepository",
+  delay(() => CategoriesRepository)
 );
 
 container.registerSingleton<ISpecificationsRepository>(
-    "SpecificationsRepository",
-    SpecificationsRepository
+  "SpecificationsRepository",
+  delay(() => SpecificationsRepository)
 );
 
 container.registerSingleton<IUsersRepository>(
-    "UsersRepository",
-    UsersRepository
+  "UsersRepository",
+  delay(() => UsersRepository)
 );
 
 container.registerSingleton<ICarsImagesRepository>(
-    "CarsImagesRepository",
-    CarsImagesRepository
+  "CarsImagesRepository",
+  delay(() => CarsImagesRepository)
 );
 
 container.registerSingleton<IRentalsRepository>(
-    "RentalsRepository",
-    RentalsRepository
+  "RentalsRepository",
+  delay(() => RentalsRepository)
 );
 
 container.registerSingleton<IUsersTokensRepository>(
-    "UsersTokensRepository",
-    UsersTokensRepository
+  "UsersTokensRepository",
+  delay(() => UsersTokensRepository)
 );
 
-container.registerSingleton<ICarsRepository>("CarsRepository", CarsRepository);
+container.registerSingleton<ICarsRepository>(
+  "CarsRepository",
+  delay(() => CarsRepository)
+);
