@@ -1,6 +1,6 @@
 import { container, delay } from "tsyringe";
 
-import "@shared/container/providers";
+import "./providers";
 
 import { UsersRepository } from "@modules/accounts/infra/typeorm/repositories/UsersRepository";
 import { UsersTokensRepository } from "@modules/accounts/infra/typeorm/repositories/UsersTokensRepository";
@@ -17,7 +17,6 @@ import { ISpecificationsRepository } from "@modules/cars/repositories/ISpecifica
 import { RentalsRepository } from "@modules/rentals/infra/typeorm/repositories/RentalsRepository";
 import { IRentalsRepository } from "@modules/rentals/repositories/IRentalsRepository";
 
-// ICategoriesRepository
 container.registerSingleton<ICategoriesRepository>(
   "CategoriesRepository",
   delay(() => CategoriesRepository)

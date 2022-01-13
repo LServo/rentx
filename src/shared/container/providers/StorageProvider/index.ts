@@ -1,15 +1,15 @@
-import { container, delay } from "tsyringe";
+import { container } from "tsyringe";
 
 import { LocalStorageProvider } from "./implementations/LocalStorageProvider";
 import { S3StorageProvider } from "./implementations/S3StorageProvider";
 import { IStorageProvider } from "./IStorageProvider";
 
 const diskStorage = {
-  local: LocalStorageProvider,
-  s3: S3StorageProvider,
+  local: container.resolve(LocalStorageProvider),
+  s3: container.resolve(S3StorageProvider),
 };
 
-container.registerSingleton<IStorageProvider>(
+container.registerInstance<IStorageProvider>(
   "StorageProvider",
-  delay(() => diskStorage[process.env.disk])
+  diskStorage[process.env.disk]
 );
