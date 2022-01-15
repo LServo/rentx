@@ -7,11 +7,11 @@ exports.specificationsRoutes = void 0;
 
 var _express = require("express");
 
-var _CreateSpecificationController = require("@modules/cars/useCases/createSpecification/CreateSpecificationController");
+var _CreateSpecificationController = require("../../../../modules/cars/useCases/createSpecification/CreateSpecificationController");
 
-var _ensureAdmin = require("@shared/infra/http/middlewares/ensureAdmin");
+var _ensureAdmin = require("../middlewares/ensureAdmin");
 
-var _ensureAuthenticated = require("@shared/infra/http/middlewares/ensureAuthenticated");
+var _ensureAuthenticated = require("../middlewares/ensureAuthenticated");
 
 const specificationsRoutes = (0, _express.Router)();
 exports.specificationsRoutes = specificationsRoutes;

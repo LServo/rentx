@@ -7,7 +7,7 @@ exports.UsersTokensRepository = void 0;
 
 var _typeorm = require("typeorm");
 
-var _UserTokens = require("@modules/accounts/infra/typeorm/entities/UserTokens");
+var _UserTokens = require("../entities/UserTokens");
 
 class UsersTokensRepository {
   constructor() {

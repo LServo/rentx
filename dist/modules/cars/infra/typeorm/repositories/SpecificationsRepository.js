@@ -7,7 +7,7 @@ exports.SpecificationsRepository = void 0;
 
 var _typeorm = require("typeorm");
 
-var _Specification = require("@modules/cars/infra/typeorm/entities/Specification");
+var _Specification = require("../entities/Specification");
 
 class SpecificationsRepository {
   constructor() {

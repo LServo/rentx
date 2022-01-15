@@ -7,7 +7,7 @@ exports.UsersRepository = void 0;
 
 var _typeorm = require("typeorm");
 
-var _User = require("@modules/accounts/infra/typeorm/entities/User");
+var _User = require("../entities/User");
 
 class UsersRepository {
   constructor() {
