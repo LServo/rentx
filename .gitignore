@@ -1,8 +1,9 @@
 ormconfig.json
-!tmp/.gitkeep
 node_modules
 coverage
 .vscode
-tmp/*
 .env
 dist
+
+tmp/*
+!tmp/.gitkeep
