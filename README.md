@@ -1,5 +1,5 @@
 <h1 align='center'>
-  <img src='.github/rentx_logo.png'>
+  <img src='./rentx_logo.png'>
 </h1>
 
 <div align="center">
@@ -49,7 +49,7 @@ To clone and run this API you will need the following software installed on your
 ### :electric_plug: Install dependencies and run the application:
 ```bash
 # Clone this repository:
-$ git clone https://github.com/i-ramoss/rentx.git
+$ git clone https://github.com/LServo/rentx.git
 
 # Enter the repository:
 $ cd RentX
@@ -95,7 +95,7 @@ $ yarn test:watch
 All API endpoints have been documented using Swagger. To view just access the URL below or click on this [link](https://deploy.ianramos.dev/api-docs/). <br>
 *Remember to start the server first*
 
-Local: *http://localhost:3333/api-docs* <br>
+Local: *http://localhost:3000/api-docs* <br>
 Production *https://deploy.ianramos.dev/api-docs/*
 
 
@@ -121,8 +121,8 @@ Feel free to bring new features or fix problems, it will be a pleasure! 💜
 ---
 
 <div align='center'>
-  Made with 💚  by <strong>Ian Ramos</strong> 🔥
-  <a href='https://www.linkedin.com/in/ian-ramos/'>Get in touch!</a>
+  Made with 💚  by <strong>Lucas Servo</strong> 🔥
+  <a href='https://www.linkedin.com/in/LServo/'>Get in touch!</a>
 </div>
 
 
