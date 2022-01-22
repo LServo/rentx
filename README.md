@@ -1,113 +1,142 @@
-# CADASTRO DE CARRO
+<h1 align='center'>
+  <img src='.github/rentx_logo.png'>
+</h1>
 
-**RF**
--> Deve ser possível cadastrar um novo carro 
+<div align="center">
+  <a href="https://opensource.org/licenses/MIT"><img alt="License MIT" src="https://img.shields.io/badge/license-MIT-brightgreen"></a>
+</div>
 
-**RNF**
-->
+<p align="center">
+  <a href="#interrobang-what-is-rentx">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-technologies">Technologies used</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#construction_worker-how-to-use-developing">How to use</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#books-documentation">Docs</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#confetti_ball-how-to-contribute">How to contribute</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#key-license">License</a>
+</p>
 
-**RN** 
--> Não deve ser possível cadastrar um carro com uma placa já existente
--> Carros devem ser cadastrados como disponível, por padrão
--> O usuário responsável peloc adastro deve ser um administrador
+--- 
+
+## :interrobang: What is RentX?
+
+RentX is a high-quality and well-rated car rental service. <br>
+Analyze vehicle specifications, choose the one that best suits you. Save and travel safely! <br>
+
+This API was developed in the NodeJS - Ignite Bootcamp, from Rocketseat. 🔥🚀 
+
+
+## :rocket: Technologies:
+
+This back-end project was developed using the following technologies:
+
+- [Typescript][typescript]
+- [Node.js][nodejs]
+- [Docker][docker]
+- [PostgreSQL][postgresql]
+- [JEST][jest]
+- [Swagger UI][swagger]
+
+
+## :construction_worker: How to use: (developing)
+
+To clone and run this API you will need the following software installed on your computer:
+
+- [Git][git]
+- [Node][nodejs]
+- [Yarn][yarn]
+- [Docker][docker]
+
+### :electric_plug: Install dependencies and run the application:
+```bash
+# Clone this repository:
+$ git clone https://github.com/i-ramoss/rentx.git
+
+# Enter the repository:
+$ cd RentX
+
+# Install the dependencies:
+$ yarn
+
+# Create the app containers:
+$ docker-compose up -d
+
+# Make a copy of the file "ormconfig.example.json" with the name "ormconfig.json":
+# Fill in the correct data to be able to connect to the database
+$ cp ormconfig.example.json ormconfig.json
+
+# Make a copy of the ".env.example" file with the name ".env":
+# Some environment variables are essential for the API to work in production
+$ cp .env.example .env
+
+# Run the migrations:
+$ yarn typeorm migrations:run
+
+# Start the application
+$ yarn dev
+
+# The server is running at port 3333 (http://localhost:3333/)
+
+# To stop the database:
+$ docker-compose stop
+```
+
+### 🧪 Run the tests:
+```bash
+# To run all tests and generate coverage reports:
+$ yarn test
+
+# To observe the functionality tests that are being changed:
+$ yarn test:watch
+
+# The coverage reports can be seen by going to /coverage/lcov-report/index.html and opening this html file in your browser. 
+```
+
+## :books: Documentation:
+All API endpoints have been documented using Swagger. To view just access the URL below or click on this [link](https://deploy.ianramos.dev/api-docs/). <br>
+*Remember to start the server first*
+
+Local: *http://localhost:3333/api-docs* <br>
+Production *https://deploy.ianramos.dev/api-docs/*
+
+
+## 📌 Project requeriments:
+All rules for this API can be found on this [link](./docs/requeriments_en.md).
+
+
+## :confetti_ball: How to contribute:
+
+-  Make a fork;
+-  Create a branch with your functionality: `git checkout -b <your_feature_name>`;
+-  Submit the changes made: `git commit -am 'type(scope): <description>'`;
+-  Push your branch: `git push origin <your_branch_name>`.
+
+After your request is accepted and added to the project, you can delete your branch.
+
+
+## :key: License:
+
+This project in under MIT license, for more details check in [LICENSE][license]. <br>
+Feel free to bring new features or fix problems, it will be a pleasure! 💜
 
 ---
 
-# Listagem de Carros
+<div align='center'>
+  Made with 💚  by <strong>Ian Ramos</strong> 🔥
+  <a href='https://www.linkedin.com/in/ian-ramos/'>Get in touch!</a>
+</div>
 
-**RF**
--> Deve ser possível listar todos os carros disponíveis
--> Deve ser possível listar todos os carros disponíveis pelo nome da categoria
--> Deve ser possível listar todos os carros disponíveis pelo nome da marca
--> Deve ser possível listar todos os carros disponíveis pelo nome da carro
 
-**RNF**
--> 
 
-**RN**
--> O usuário não precisa estar logado no sistema
+[typescript]: https://www.typescriptlang.org/
+[nodejs]: https://nodejs.org/en/
+[express]: https://expressjs.com/pt-br/
+[postgresql]: https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+[multer]: https://github.com/expressjs/multer
+[swagger]: https://swagger.io/
+[git]: https://git-scm.com
+[docker]: https://www.docker.com/
+[jest]: https://jestjs.io/
+[yarn]: https://yarnpkg.com/
 
----
-
-# Cadastro de Especificação de Carros
-
-**RF**
--> Deve ser possível cadastrar uma especificaçao para um carro
-
-**RNF**
-->
-
-**RN**
--> O usuário responsável peloc adastro deve ser um administrador
--> Não deve ser possível cadastrar uma especificação para um carro não cadastrado
--> Não deve ser possível cadastrar uma espeficicação já existente para um mesmo carro
-
----
-
-# Cadastro de Imagens do Carro
-
-**RF**
--> Deve ser possível cadastrar imagens do carro
--> Deve ser possível listar todos os carros
-
-**RNF**
--> Utilizar o multer para upload dos arquivos
-
-**RN**
--> Usuário deve poder cadastrar mais de uma imagem para o mesmo carro
--> O usuário responsável peloc adastro deve ser um administrador
-
----
-
-# Aluguel de Carro
-
-**RF**
--> Deve ser possível cadastrar um aluguel
-
-**RNF**
--> 
-
-**RN**
--> O aluguel deve ter duração mínima de 24h
--> O usuário deve estar logado na aplicação
--> Ao realizar um aluguel, o status do carro deverá ser alterado para indisponível
--> Não deve ser possívle cadastrar um novo aluguel caso já exista um em aberto para o mesmo usuário
--> Não deve ser possívle cadastrar um novo aluguel caso já exista um em aberto para o mesmo carro
-
----
-
-# Devolução de carro
-
-**RF**
--> Deve ser possível realizar a devolução de um carro
-
-**RN**
--> Se o carro for devoltido com menos de 24 horas, deverá ser cobrada a diária completa
--> Ao realizar a devolução, o carro deverá ser liberado para outro aluguel
--> Ao realizar a devolução, o usuário deverá ser liberado para outro aluguel
--> Ao realizar a devolução, deverá ser calculado o total do aluguel
--> Caso o horário de devolução seja superior ao horário previsto de entrega, deverá ser cobrada multa proporcional aos dias de atraso
--> Caso haja multi, deverá ser somado ao total do aluguel
-
----
-
-# Listagem de Aluguéis para Usuário
-
-**RF**
--> Deve ser possível realizar a busca de todos os aluguéis para o usuário
-
-**RN**
--> O usuário deve estar logado na aplicação
-
----
-
-# Recuperar Senha
-
-**RF**
--> Deve ser possível o usuário recuperar a senha informando o email
--> O usuário deve receber um email com o passo a passo para a recuperação de senha 
--> O usuário deve conseguir inserir uma nova senha 
-
-**RN**
-->O usuário precisa informar uma nova senha
--> O link enviando para a recuperação deve expirar em 3 horas
+[license]: https://github.com/i-ramoss/Foodfy/blob/master/LICENSE
+[linkedin]: https://www.linkedin.com/in/ian-ramos/
