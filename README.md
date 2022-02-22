@@ -92,11 +92,11 @@ $ yarn test:watch
 ```
 
 ## :books: Documentation:
-All API endpoints have been documented using Swagger. To view just access the URL below or click on this [link](https://deploy.ianramos.dev/api-docs/). <br>
+All API endpoints have been documented using Swagger. To view just access the URL below or click on this [link](). <br>
 *Remember to start the server first*
 
 Local: *http://localhost:3000/api-docs* <br>
-Production *https://deploy.ianramos.dev/api-docs/*
+Production **
 
 
 ## 📌 Project requeriments:
@@ -138,5 +138,4 @@ Feel free to bring new features or fix problems, it will be a pleasure! 💜
 [jest]: https://jestjs.io/
 [yarn]: https://yarnpkg.com/
 
-[license]: https://github.com/i-ramoss/Foodfy/blob/master/LICENSE
-[linkedin]: https://www.linkedin.com/in/ian-ramos/
+[linkedin]: https://www.linkedin.com/in/LServo/

@@ -1,5 +1,5 @@
 # Imagem a ser utilizada
-FROM node
+FROM node:17.4.0
 
 # Diretório aonde as informações do app estarão contidas!
 WORKDIR /usr/app
